@@ -1,36 +1,26 @@
+from lib.diary_entry import *
+
 class Diary:
     def __init__(self):
-        pass
+        self.entries_list = []
 
     def add(self, entry):
-        # Parameters:
-        #   entry: an instance of DiaryEntry
-        # Returns:
-        #   Nothing
-        # Side-effects:
-        #   Adds the entry to the entries list
-        pass
+        self.entries_list.append(entry)
 
     def all(self):
-        # Returns:
-        #   A list of instances of DiaryEntry
-        pass
+        return self.entries_list
 
     def count_words(self):
-        # Returns:
-        #   An integer representing the number of words in all diary entries
-        # HINT:
-        #   This method should make use of the `count_words` method on DiaryEntry.
-        pass
+        word_count = 0
+        for entry in self.entries_list:
+            word_count += entry.count_words()
+        return word_count
 
     def reading_time(self, wpm):
-        # Parameters:
-        #   wpm: an integer representing the number of words the user can read
-        #        per minute
-        # Returns:
-        #   An integer representing an estimate of the reading time in minutes
-        #   if the user were to read all entries in the diary.
-        pass
+        reading_time = 0
+        for entry in self.entries_list:
+            reading_time += entry.reading_time(wpm)
+        return reading_time
 
     def find_best_entry_for_reading_time(self, wpm, minutes):
         # Parameters:

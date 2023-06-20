@@ -13,3 +13,7 @@ def test_single_entry_count_words():
 def test_reading_time_for_2wpm():
         diary_entry = DiaryEntry("Title 1", "Contents one")
         assert diary_entry.reading_time(2) == 1
+
+def test_initialize_2_words_first_chunk():
+    diary_entry = DiaryEntry("Title 1", "Contents one")
+    assert diary_entry.reading_chunk(1,1) == "Contents"

@@ -18,6 +18,8 @@ class Diary:
 
     def reading_time(self, wpm):
         reading_time = 0
+        if self.entries_list == []:
+            raise Exception("No entries added!")
         for entry in self.entries_list:
             reading_time += entry.reading_time(wpm)
         return reading_time

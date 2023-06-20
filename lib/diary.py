@@ -32,4 +32,14 @@ class Diary:
         #   An instance of DiaryEntry representing the entry that is closest to,
         #   but not over, the length that the user could read in the minutes
         #   they have available given their reading speed.
-        pass
+        best_entry = None
+        min_reading_time = 9999999
+        for entry in self.entries_list :
+            entry_word_count = entry.count_words()
+            entry_reading_time = entry_word_count / wpm
+            
+
+            if entry_reading_time <= minutes and minutes - entry_reading_time < min_reading_time :
+                best_entry = entry
+                min_reading_time = minutes - entry_reading_time
+        return best_entry

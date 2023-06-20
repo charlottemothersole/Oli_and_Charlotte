@@ -56,6 +56,7 @@ def test_return_entry_to_match_time_we_have_to_read():
 
 """
 ^^^^^^
+pseudo code 1
 var = we need to calculate how many words we can read
 for loop - look at stored entries list and run count_words
     if entry word count == var return entry
@@ -64,4 +65,15 @@ for loop - look at stored entries list and run count_words
 if dict == {} return None 
 else sort dict
 return highest
+
+pseudo code 2
+best entry variable set to None
+min reading time variable = 99999999
+loop through entries list
+    get word count and reading time for each entry
+        if reading time is <= minutes and minutes
+        - entry reading time < min reading time
+            set entry to best entry
+            set min reading time to minutes - entry reading time
+return best entry
 """
